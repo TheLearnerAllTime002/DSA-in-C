@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #define MAX_SIZE 100
 
-
 int insert(int arr[], int *n, int value, int position);
 int delete(int arr[], int *n, int position);
 void update(int arr[], int n, int value, int position);
