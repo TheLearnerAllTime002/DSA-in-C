@@ -1,0 +1,791 @@
+#include <stdio.h>
+
+void right_half_pyramid(int n);
+void left_half_pyramid(int n);
+void full_pyramid(int n);
+void inverted_right_half_pyramid(int n);
+void inverted_left_half_pyramid(int n);
+void inverted_full_pyramid(int n);
+void rhombus_pattern(int n);
+void diamond_pattern(int n);
+void hourglass_pattern(int n);
+void hollow_square_pattern(int n);
+void hollow_full_pyramid(int n);
+void hollow_inverted_full_pyramid(int n);
+void hollow_diamond_pyramid(int n);
+void floyds_triangle(int n);
+void pascals_triangle(int n);
+void butterfly_pattern(int n);
+void x_shape_pattern(int n);
+void plus_shape_pattern(int n);
+void zigzag_pattern(int n);
+void checkerboard_pattern(int n);
+void reverse_pyramid(int n);
+
+int main() {
+    int choice, n;
+
+    printf("Enter the number of rows (n): ");
+    scanf("%d", &n);
+
+    while (1) {
+        printf("\nPattern Menu:\n");
+        printf("1. Right Half Pyramid\n");
+        printf("2. Left Half Pyramid\n");
+        printf("3. Full Pyramid\n");
+        printf("4. Inverted Right Half Pyramid\n");
+        printf("5. Inverted Left Half Pyramid\n");
+        printf("6. Inverted Full Pyramid\n");
+        printf("7. Rhombus Pattern\n");
+        printf("8. Diamond Pattern\n");
+        printf("9. Hourglass Pattern\n");
+        printf("10. Hollow Square Pattern\n");
+        printf("11. Hollow Full Pyramid\n");
+        printf("12. Hollow Inverted Full Pyramid\n");
+        printf("13. Hollow Diamond Pyramid\n");
+        printf("14. Floyd's Triangle\n");
+        printf("15. Pascal's Triangle\n");
+        printf("16. Butterfly Pattern\n");
+        printf("17. X-Shape Pattern\n");
+        printf("18. Plus-Shape Pattern\n");
+        printf("19. Zigzag Pattern\n");
+        printf("20. Checkerboard Pattern\n");
+        printf("21. Reverse Pyramid\n");
+        printf("22. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1: right_half_pyramid(n); break;
+            case 2: left_half_pyramid(n); break;
+            case 3: full_pyramid(n); break;
+            case 4: inverted_right_half_pyramid(n); break;
+            case 5: inverted_left_half_pyramid(n); break;
+            case 6: inverted_full_pyramid(n); break;
+            case 7: rhombus_pattern(n); break;
+            case 8: diamond_pattern(n); break;
+            case 9: hourglass_pattern(n); break;
+            case 10: hollow_square_pattern(n); break;
+            case 11: hollow_full_pyramid(n); break;
+            case 12: hollow_inverted_full_pyramid(n); break;
+            case 13: hollow_diamond_pyramid(n); break;
+            case 14: floyds_triangle(n); break;
+            case 15: pascals_triangle(n); break;
+            case 16: butterfly_pattern(n); break;
+            case 17: x_shape_pattern(n); break;
+            case 18: plus_shape_pattern(n); break;
+            case 19: zigzag_pattern(n); break;
+            case 20: checkerboard_pattern(n); break;
+            case 21: reverse_pyramid(n); break;
+            case 22: return 0;
+            default: printf("Invalid choice! Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+
+
+void right_half_pyramid(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            printf("%c ", 'A' + j);
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            printf("%d ", j + 1);
+        }
+        printf("\n");
+    }
+}
+
+void left_half_pyramid(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 2 * (n - i) - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k <= i; k++) {
+            printf("%c ", 'A' + k);
+        }
+        printf("\n");
+    }
+     printf("\nNow implementing using Numbers\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 2 * (n - i) - 2; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k <= i; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+}
+
+void full_pyramid(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * (n - i) - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * i + 1; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * (n - i) - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * i + 1; k++) {
+            printf("%c ", 'A' + k);
+        }
+        printf("\n");
+    }
+}
+
+void inverted_right_half_pyramid(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n - i; j++) {
+            printf("%c ", 'A' + j);
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n - i; j++) {
+            printf("%d ", j + 1);
+        }
+        printf("\n");
+    }
+}
+
+void inverted_left_half_pyramid(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * i; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < n - i; k++) {
+            printf("%c ", 'A' + k);
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * i; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < n - i; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+}
+
+void inverted_full_pyramid(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * i; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * (n - i) - 1; k++) {
+            printf("%c ", 'A' + k);
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * i; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * (n - i) - 1; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+}
+
+void rhombus_pattern(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (int j = 1; j <= n; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n - i - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < n; k++) {
+            printf("%c ", k + 'A');
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n - i - 1; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k < n; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+}
+
+void diamond_pattern(int n) {
+    for (int i = 0; i < 2 * n - 1; i++) {
+        int comp;
+        if (i < n) {
+            comp = 2 * (n - i) - 1;
+        }
+        else {
+            comp = 2 * (i - n + 1) + 1;
+        }
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k < 2 * n - comp; k++) {
+            printf("* ");
+        }
+        printf("\n");
+		}
+		printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < 2 * n - 1; i++) {
+
+        int comp;
+        if (i < n) {
+            comp = 2 * (n - i) - 1;
+        }
+        else {
+            comp = 2 * (i - n + 1) + 1;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            printf("%c ", k + 'A');
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+      for (int i = 0; i < 2 * n - 1; i++) {
+
+        int comp;
+        if (i < n) {
+            comp = 2 * (n - i) - 1;
+        }
+        else {
+            comp = 2 * (i - n + 1) + 1;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+}
+
+void hourglass_pattern(int n) {
+    for (int i = 0; i < 2 * n - 1; i++) {
+        int comp;
+        if (i < n) {
+            comp = 2 * i + 1;
+        }
+        else {
+            comp = 2 * (2 * n - i) - 3;
+        }
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+      for (int i = 0; i < 2 * n - 1; i++) {
+
+        int comp;
+        if (i < n) {
+            comp = 2 * i + 1;
+        }
+        else {
+            comp = 2 * (2 * n - i) - 3;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            printf("%c ", k + 'A');
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < 2 * n - 1; i++) {
+
+        int comp;
+        if (i < n) {
+            comp = 2 * i + 1;
+        }
+        else {
+            comp = 2 * (2 * n - i) - 3;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            printf("%d ", k + 1);
+        }
+        printf("\n");
+    }
+}
+
+void hollow_square_pattern(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (i == 1 || i == n || j == 1 || j == n) {
+                printf("* ");
+            } else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n; j++) {
+            
+            if (i > 0 && i < n - 1 && j > 0
+                && j < n - 1) {
+                printf("  ");
+            }
+            else {
+                printf("%c ", j + 'A');
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n; j++) {
+            
+            if (i > 0 && i < n - 1 && j > 0
+                && j < n - 1) {
+                printf("  ");
+            }
+            else {
+                printf("%d ", j + 1);
+            }
+        }
+        printf("\n");
+    }
+}
+
+void hollow_full_pyramid(int n) {
+     for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 2 * (n- i) - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * i + 1; k++) {
+            if (k == 0 || k == 2 * i || i == n - 1) {
+                printf("* ");
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * (n - i) - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * i + 1; k++) {
+            if (k == 0 || k == 2 * i || i == n - 1) {
+                printf("%c ", k + 'A');
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 2 * (n - i) - 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * i + 1; k++) {
+            if (k == 0 || k == 2 * i || i == n - 1) {
+                printf("%d ", k + 1);
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void hollow_inverted_full_pyramid(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            if (j == 1 || j == 2 * i - 1 || i == n) {
+                printf("* ");
+            } else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+     for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * i + 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * (n - i) - 1; k++) {
+            if (k == 0 || k == 2 * (n - i) - 2 || i == 0)
+                printf("%c ", k + 'A');
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+      for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < 2 * i + 1; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * (n - i) - 1; k++) {
+            if (k == 0 || k == 2 * (n - i) - 2 || i == 0)
+                printf("%d ", k + 1);
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void hollow_diamond_pyramid(int n) {
+    for (int i = 0; i < 2 * n - 1; i++) {
+       
+        int comp;
+        if (i < n) {
+            comp = 2 * (n - i) - 1;
+        }
+        else {
+            comp = 2 * (i - n + 1) + 1;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            if (k == 0 || k == 2 * n - comp - 1) {
+                printf("* ");
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Alphabets\n");
+     printf("\n");
+      for (int i = 0; i < 2 * n - 1; i++) {
+        
+        int comp;
+        if (i < n) {
+            comp = 2 * (n - i) - 1;
+        }
+        else {
+            comp = 2 * (i - n + 1) + 1;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            if (k == 0 || k == 2 * n - comp - 1) {
+                printf("%c ", k + 'A');
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\nNow implementing using Numbers\n");
+     printf("\n");
+     for (int i = 0; i < 2 * n - 1; i++) {
+        
+        int comp;
+        if (i < n) {
+            comp = 2 * (n - i) - 1;
+        }
+        else {
+            comp = 2 * (i - n + 1) + 1;
+        }
+
+        for (int j = 0; j < comp; j++) {
+            printf(" ");
+        }
+
+        for (int k = 0; k < 2 * n - comp; k++) {
+            if (k == 0 || k == 2 * n - comp - 1) {
+                printf("%d ", k + 1);
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void floyds_triangle(int n) {
+    int num = 1;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", num);
+            num++;
+        }
+        printf("\n");
+    }
+}
+
+void pascals_triangle(int n) {
+    for (int i = 0; i < n; i++) {
+        int number = 1;
+        printf("%*s", (n - i) * 2, ""); 
+        for (int j = 0; j <= i; j++) {
+            printf("%4d", number);
+            number = number * (i - j) / (j + 1);
+        }
+        printf("\n");
+    }
+}
+
+void butterfly_pattern(int n) {
+    // Upper half
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        for (int j = 1; j <= 2 * (n - i); j++) {
+            printf(" ");
+        }
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    // Lower half
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        for (int j = 1; j <= 2 * (n - i); j++) {
+            printf(" ");
+        }
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+void x_shape_pattern(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (j == i || j == (n - i + 1)) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void plus_shape_pattern(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (i == n / 2 + 1 || j == n / 2 + 1) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void zigzag_pattern(int n) {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= n; j++) {
+            if ((i + j) % 4 == 0 || (i == 2 && j % 4 == 0)) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void checkerboard_pattern(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if ((i + j) % 2 == 0) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void reverse_pyramid(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= n - i; j++) {
+            printf(" ");
+        }
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
