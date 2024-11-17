@@ -21,8 +21,7 @@ int main() {
         switch (ch) {
             case 1:
                 enqueue();
-                break; // ar jokhon kichu changes kori autometically changes hoye jay 
-                //setake push kore dilei realtime e oi github repo teo sync hoye jay 
+                break; 
             case 2:
                 dequeue();
                 break;
